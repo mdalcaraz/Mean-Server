@@ -48,7 +48,7 @@ const actualizarProducto = async (req, res, next) => {
             ubicacion,
             precio
         }, { new: true })
-        
+
         if (saved) {
             res.json(saved)
         } else {
@@ -81,7 +81,6 @@ const obtenerProducto = async (req, res, next) => {
 const eliminarProducto = async (req, res, next) => {
     try {
         const producto = await Producto.deleteOne({ _id: req.params.id });
-
 
         if (producto.deletedCount) {
             res.json({ msg: "Producto borrado" })
